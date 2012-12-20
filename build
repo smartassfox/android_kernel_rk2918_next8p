@@ -1,0 +1,51 @@
+
+make mrproper
+make odys-neox8_defconfig
+make -j3 kernel.img 2>&1 | tee build-neox8.log
+cp kernel.img ../NEOX8
+7z a ../JK-JB-NEOX8-oc1104_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make next8p-marxo_defconfig
+make -j3 kernel.img 2>&1 | tee build-next8p.log
+cp kernel.img ../NEXT8P
+7z a ../NEXT8P-kernel_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make odys-neox7_defconfig
+make -j3 kernel.img 2>&1 | tee build-neox7.log
+cp kernel.img ../NEOX7
+7z a ../JK-JB-NEOX7-oc1104_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make bq-kepler2_defconfig
+make -j3 kernel.img 2>&1 | tee build-kepler2.log
+cp kernel.img ../Kepler2
+7z a ../JK-JB-Kepler2-oc1104_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make bq-pascal2_defconfig
+make -j3 kernel.img 2>&1 | tee buildpascal2.log
+cp kernel.img ../Pascal2
+7z a ../JK-JB-Pascal2-oc1104_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make bq-pascal2_defconfig
+make -j3 kernel.img 2>&1 | tee buildpascal2.log
+cp kernel.img ../Pascal2
+7z a ../JK-JB-Pascal2-oc1104_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make M820c3G_defconfig
+make -j3 kernel.img 2>&1 | tee buildM820c3G.log
+cp kernel.img ../M820c3G
+7z a ../JK-JB-M820c3G-oc1104_$(date +"%Y%m%d") kernel.img
+
+make mrproper
+make arnova-an8cg3_defconfig
+make -j3 kernel.img 2>&1 | tee buildAN8cG3.log
+cp kernel.img ../AN8cG3
+7z a ../JK-JB-AN8cG3-oc1104_$(date +"%Y%m%d") kernel.img
+
+make clean
+
